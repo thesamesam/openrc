@@ -37,6 +37,11 @@ jobs:
 
         # Details on CodeQL's query packs refer to : https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
         # queries: security-extended,security-and-quality
+  
+    - name: Install dependencies
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -q -y build-essential libpam-dev meson libcap-dev
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
